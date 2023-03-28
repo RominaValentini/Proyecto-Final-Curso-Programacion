@@ -1,0 +1,33 @@
+<body style="background-color: rgb(217, 244, 252);">
+    <div class="container" style="margin: 100px auto">
+    <div class="row">
+        <div class="col-6">
+            <h4 style="font-weight: bolder; color: blue; text-align: center">Agregar una nueva novedad</h4>
+            <form action="/admin/novedades/agregar" method="post" enctype="multipart/form-data">
+                <div class="form-group" style="margin-top: 30px;">
+                    <label for="" style="font-weight: bolder;">Título</label>
+                    <input type="text" class="form-control" name="titulo">
+                </div>
+                <div class="form-group" style="margin-top: 30px;">
+                    <label for="" style="font-weight: bolder;">Subtítulo</label>
+                    <br>
+                    <textarea type="text" class="form-control" name="subtitulo" id="" cols="30" rows="3"></textarea>
+                </div>
+                <div class="form-group" style="margin-top: 30px;">
+                    <label for="" style="font-weight: bolder;">Cuerpo</label>
+                    <br>
+                    <textarea type="text" class="form-control" name="cuerpo" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-group" style="margin-top: 20px;">
+                    <label> <span style="font-weight: bolder;">Imagen:</span><input type="file" class="form-control" name="imagen" id="imagen" /></label>
+                </div>
+                <button type="submit" class="btn btn-info" style="margin-top: 25px"><span style="font-weight: bolder;">Guardar</span></button>
+            </form>
+            {{#if error}}
+            <p> {{message}} </p>
+            {{/if}}
+        </div>
+    </div>
+</div>
+</body>
+

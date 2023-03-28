@@ -1,0 +1,194 @@
+<div class="container-fluid">
+  <div id="home" class="row align-items-center hero scroll_section">
+    <div class="col-lg-3 offset-lg-2">
+      <h1>Paquetes Turísticos</h1>
+      <h2>Los mejores destinos para tu próximo viaje por Argentina</h2>
+    </div>
+  </div>
+</div>
+
+  <div class="row" style="padding-top: 50px;">
+    <div id="novedades" class="col-md-5 offset-md-1 scroll_section">
+      <h2 style="color: black; font-weight: bolder; text-align: center; text-decoration: underline">Lugares</h2>
+      <div class="col-5 text-right offset-md-9">
+                <form class="form-inline d-flex" action="/admin/novedades" method="get">
+                    <input class="form-control" type="search" placeholder="Buscar" aria-label="Search" name="q">
+                    <button class="btn btn-info" type="submit"><i class="fa fa-search"
+                            aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+      <ul class="lista-novedades" style="padding-top: 25px;">
+        {{#each novedades}}
+        <li><a href="#" data-bs-toggle="modal" data-bs-target="#modal{{id}}"><img src="{{imagen}}"> {{titulo}} </a></li>
+        {{/each}}
+      </ul>
+    </div>
+
+    {{#each novedades}}
+    <div class="modal fade" id="modal{{id}}" tabindex="-1"> 
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <img src="{{imagen}}">
+            <h5 class="modal-title" style="margin-left: 30px;"> {{titulo}} </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h4> {{subtitulo}} </h4>
+            <p> {{cuerpo}} </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+
+    <div id="testimonios" class="col-md-5 offset-md-1 scroll_section">
+      <h2 style="color: black; font-weight: bolder; text-align: center; text-decoration: underline">Testimonios</h2>
+      <div id="carouselExampleIndicators" class="carousel slide" style="padding-top: 25px;">
+        <div class="carousel-indicators" style="padding-top: 10px;">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h5>Argentina tiene todos los climas, suelos, montañas, mar, sierra, nieve, sol, cataratas, glaciares y
+              bellas ciudades.</h5>
+            <h6>Ana, Buenos Aires</h6>
+          </div>
+          <div class="carousel-item">
+            <h5>Los destinos turísticos argentinos son fantásticos para los que nos gusta la naturaleza!!</h5>
+            <h6>Romina, Neuquén</h6>
+          </div>
+          <div class="carousel-item">
+            <h5>Argentina es un país maravilloso!</h5>
+            <h6>María, Córdoba</h6>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="row align-items-center py-4" style="margin-top: 50px; margin-left: 10px">
+      <div id="historia" class="col-2 d-none d-sm-block scroll_section">
+        <img src="images/Casa de Tucuman.jpg" alt="Casa de Tucumán" class="img-fluid">
+      </div>
+      <div class="col-2 d-none d-sm-block">
+        <img src="images/Congreso-de-Tucumán.jpg" alt="Congreso-de-Tucumán" class="img-fluid">
+      </div>
+      <div class="col-12 d-sm-none">
+        <img src="images/tucuman.jpeg" alt="Tucumán" class="img-fluid">
+      </div>
+      <div class="col-8">
+        <h3 style="font-weight: bolder;">Historia de la Independencia Argentina</h3>
+        <p>La Declaración de Independencia de la Argentina fue una decisión tomada el martes 9 de julio de 1816 por el
+          Congreso de Tucumán, por la cual declaró la formal ruptura de los vínculos de dependencia política de las
+          Provincias Unidas del Río de la Plata con la monarquía española. La declaración fue realizada en la Casa de
+          Tucumán, ubicada en la ciudad de San Miguel de Tucumán, donde sesionaba la asamblea. Diez días más tarde, el
+          mismo Congreso renunció también a toda otra dominación extranjera. El acto forma parte del movimiento de
+          independencia hispanoamericana del Imperio español.</p>
+      </div>
+    </div>
+
+    <div id="nosotros" class="row staff py-3 scroll_section"
+      style="margin-top: 50px; margin-right: 5px; margin-left: 5px;">
+      <div class="col-lg-8 offset-lg-2">
+        <h2 style="color: black; font-weight: bolder; text-align: center; text-decoration: underline">Nosotros</h2>
+        <div class="card-group" style="margin-top: 15px;">
+          <div id="card" class="card">
+            <img src="images/nosotros01.jpg" class="card-img-top" alt="Nosotros1">
+            <div class="card-body">
+              <h5 class="card-title">Claudia Suarez</h5>
+              <p class="card-text" style="text-align: center;">Coordinadora general</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/nosotros02.jpg" class="card-img-top" alt="Nosoros2">
+            <div class="card-body">
+              <h5 class="card-title">Marcos Romero</h5>
+              <p class="card-text" style="text-align: center;">Gerente de ventas</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/nosotros03.jpg" class="card-img-top" alt="Nosotros3">
+            <div class="card-body">
+              <h5 class="card-title">Alexis Lattanzio</h5>
+              <p class="card-text" style="text-align: center;">Coordinador de viajes</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/nosotros04.jpg" class="card-img-top" alt="Nosotros4">
+            <div class="card-body">
+              <h5 class="card-title">Agustín Quiroga</h5>
+              <p class="card-text" style="text-align: center;">Coordinador de viajes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 50px;">
+      <div id="visitanos" class="col-6 scroll_section">
+        <h2 style="color: black; font-weight: bolder; text-align: center; text-decoration: underline">Visitanos</h2>
+        <div class="mapa" style="margin-top: 25px; margin-left: 10px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2194085942465!2d-58.42229628475262!3d-34.59861296473503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca62d4cf1563%3A0x686de505d84c67e6!2sAv.%20Medrano%20951%2C%20C1179AAQ%20CABA!5e0!3m2!1ses!2sar!4v1672263118978!5m2!1ses!2sar"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div id="contacto" class="col-6 scroll_section"
+        style="font-size: 30; color: black; text-transform: uppercase; font-weight: bolder;">
+        <h2
+          style="color: black; font-weight: bolder; text-transform: capitalize; text-align: center; text-decoration: underline">
+          Contacto</h2>
+        <div class="mb-3">
+          <p style="margin-top: 25px; margin-left: 10px; font-weight: normal;">Compartí tu opinión con nosotros o pedí
+            información sobre nuestros precios llenando nuestro formulario o llamando al 0800-555-2375 de Lunes a
+            Viernes de 7 a 20 hs y Sábados de 10 a 15 hs</p>
+          <form class="row g-3" style="margin-top: 20px;" action="/" method="post">
+            <div class="col-md-6">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre">
+            </div>
+            <div class="col-md-6">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="apellido" name="apellido">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Mail</label>
+              <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="mb-3">
+              <label for="tel" class="form-label">Tel</label>
+              <input type="text" class="form-control" id="tel" name="tel">
+            </div>
+            <div class="mb-3">
+              <label for="mensaje" class="form-label">Tu Mensaje</label>
+              <input type="text" class="form-control" id="mensaje" name="mensaje">
+            </div>
+            <div class="d-grid d-md-flex justify-content-md-end">
+              <button type="submit" class="btn btn-info offset-md-5">Enviar</button>
+            </div>
+          </form>
+          <p>{{message}}</p>
+        </div>
+      </div>
+    </div>

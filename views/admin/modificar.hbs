@@ -1,0 +1,41 @@
+<body style="background-color: rgb(205, 237, 248);">
+    <div class="container" style="margin: 100px auto">
+        <div class="row">
+            <div class="col-6">
+                <h4 style="font-weight: bolder; color: blue; text-align: center">Modificar la novedad</h4>
+                <form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data">
+                    <input type="hidden" value="{{novedad.id}}" name="id">
+                    <div class="form-group">
+                        <label for="" style="font-weight: bolder; margin-top: 30px">Título</label>
+                        <input type="text" class="form-control" name="titulo" value="{{novedad.titulo}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="font-weight: bolder; margin-top: 30px">Subtítulo</label>
+                        <input type="text" class="form-control" name="subtitulo" value="{{novedad.subtitulo}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="font-weight: bolder; margin-top: 30px">Cuerpo</label>
+                        <textarea name="cuerpo" class="form-control" id="" cols="30"
+                            rows="10"> {{novedad.cuerpo}} </textarea>
+                    </div>
+                    <div class="form-group" style="margin-top: 20px;">
+                        <p>
+                            <label> <span style="font-weight: bolder;">Imagen:</span>
+                            <br>
+                            <input type="file" name="imagen" id="imagen" /></label>
+                        </p>
+                        <p>
+                            <label><input type="checkbox" name="img_delete" id="img_delete" value="1"><span style="margin-left: 5px; font-weight: bolder;">Eliminar imagen actual?</span></label>
+                            <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+                        </p>
+                    </div>
+                    <button type="submit" class="btn btn-info" style="margin-top: 20px"><span
+                            style="font-weight: bolder;">Modificar</span></button>
+                </form>
+                {{#if error}}
+                   <p>{{message}}</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</body>
